@@ -1,0 +1,85 @@
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='mars_style.css')}}">
+</head>
+<body>
+    <div class="container-jumbotron">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape">Scrape Data
+            </a></p>
+        </div>
+    </div>
+
+    <div class="headline">
+        <h3>Latest Mars News</h3>
+        <h5>{{entries.mars_news_entry.mars_news_tag}}</h5>
+        <p>{{entries.mars_news_entry.mars_news_body}}</p>
+    </div>
+
+    <div class='container' id='featured-img'>
+        <h3>Featured Mars Image</h3>
+        <div id='jpl-img'>
+            <h4>{{entries.mars_jpl_img_entry.img_title}}</h4>
+            <img src="{{entries.mars_jpl_img_entry.img_url}}" alt="...">
+        </div>
+    </div>
+
+    <div id='mars-weather'>
+        <h3>Mars Weather</h3>
+        <p>{{entries.mars_weather}}</p>
+    </div>
+
+    <h3>Mars Facts</h3>
+    <div id='mars-facts'>
+        <table>
+            {{entries.mars_facts_html|safe}}
+        </table>
+    </div>
+
+    <div class='container-body' id="hemispheres">
+        <div class="row">
+            <div class="col-xl-6 col-l-6 col-md-12">
+                <div class='hemisphere-img'>
+                    <img src="{{entries.mars_hemispheres_entry.hemisphere_url_0}}" alt="...">
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-l-6 col-md-12">
+                <div class='hemisphere-img'>
+                    <img src="{{entries.mars_hemispheres_entry.hemisphere_url_1}}" alt="...">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xl-6 col-l-6 col-md-12">
+               <div class='hemisphere-img'>
+                    <img src="{{entries.mars_hemispheres_entry.hemisphere_url_2}}" alt="...">  
+               </div>
+            </div>
+
+            <div class="col-xl-6 col-l-6 col-md-12">
+                <div class='hemisphere-img'>
+                    <img src="{{entries.mars_hemispheres_entry.hemisphere_url_3}}" alt="...">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
