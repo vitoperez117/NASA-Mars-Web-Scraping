@@ -1,4 +1,4 @@
-# web-scraping-challenge
+# NASA-Mars-Web-Scraping
 
 ## Contents
 1) Python Web Scraping code (scrape_mars.py)
